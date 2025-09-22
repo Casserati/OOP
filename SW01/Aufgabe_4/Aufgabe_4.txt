@@ -1,0 +1,15 @@
+4.3
+a)
+	Klasse:
+	- Kassenzettel
+	- Händler
+	- Adresse
+	- Produkt
+	- Zahlungstyp
+	- MWSt
+	
+	Attribute:
+	Anzahl der Produkten
+	Preis der Produkten
+	
+	

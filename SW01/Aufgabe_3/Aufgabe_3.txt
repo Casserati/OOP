@@ -1,0 +1,48 @@
+a)
+Zustand:
+	Grösse
+	Alter
+	Berufung
+
+
+Verhalten:
+	Reden
+	Lernen
+
+b)
+Zustand:
+	Farbe
+	Modell
+	Typ
+	Grösse
+	Zustand
+
+Verhalten:
+	Fahren
+	Bremsen
+
+c)
+Fahrradhändler:
+	Modell
+
+Fahrradproduzent:
+	Material
+
+Fahrraddieb:
+	Preis
+	Zustand
+
+d)
+Backofen Beispiel
+Zustand:
+	Modell
+	Grösse
+	Farbe
+	Funktionen
+	Hitze
+	
+Verhalten:
+	Zustand (I/O)
+	Heizen
+	Kühlen
+	Programm ändern
