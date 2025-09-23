@@ -9,7 +9,7 @@ public class Temperatur {
      * sets default temperature to 20 degree Celsius
      */
     public Temperatur() {
-        this.temperatureInCelsius = 20.0;
+        this.temperatureInCelsius = 20.0d;
     }
 
     /**
@@ -32,14 +32,14 @@ public class Temperatur {
      * @return current temperature of class in Kelvin
      */
     public double getTemperatureInKelvin(){
-        return temperatureInCelsius  + 273.15;
+        return temperatureInCelsius  + 273.15d;
     }
 
     /**
      * @return current temperature of class in Fahrenheit
      */
     public double getTemperatureInFahrenheit(){
-        return temperatureInCelsius * 1.8f + 32;
+        return temperatureInCelsius * 1.8d + 32d;
     }
 
     /**
@@ -47,7 +47,7 @@ public class Temperatur {
      * @param temperatureInKelvin relative temperature change in Kelvin
      */
     public void changeTemperatureInKelvin(double temperatureInKelvin){
-        this.temperatureInCelsius =- temperatureInKelvin - 273.15;
+        this.temperatureInCelsius =- temperatureInKelvin - 273.15d;
     }
 
     /**
