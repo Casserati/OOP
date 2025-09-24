@@ -13,3 +13,14 @@ i = 2147483647 + 1
 i = 2147483648
 
 Why?: weil die Vorgehenden 1 durch die 32 Bits wegfallen und die Positive Zahl 2147483648 die gleiche Binäre Zahl wie die -2147483648 ist
+
+es zählt nicht für negativ!
+
+i = -2147483647 - 1 = 2147483648
+
+ABER
+
+i = -2147483648 - 1 = 2147483647
+
+da das erste bit für das anzeigen der positiven als auch negativen Zahl ist und das erste Bit bei einer Negativen Zahl 1 ist
+

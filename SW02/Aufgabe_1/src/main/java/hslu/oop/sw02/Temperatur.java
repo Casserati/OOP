@@ -49,22 +49,11 @@ public class Temperatur {
     /**
      * changes temperature relative to given value
      *
-     * @param temperatureInKelvin relative temperature change in Kelvin
+     * @param temperature relative temperature
      */
-    public void changeTemperatureInKelvin(float temperatureInKelvin) {
-        if (verifyTemperatureValid(this.temperatureInCelsius + fromKelvinToCelsius(temperatureInKelvin))) {
-            this.temperatureInCelsius =+ temperatureInKelvin - 273.15f;
-        }
-    }
-
-    /**
-     * changes temperature relative to given value
-     *
-     * @param temperatureInCelsius relative temperature change in Celsius
-     */
-    public void changeTemperatureInCelsius(float temperatureInCelsius) {
-        if(verifyTemperatureValid(this.temperatureInCelsius + temperatureInCelsius)) {
-            this.temperatureInCelsius =+ temperatureInCelsius;
+    public void changeTemperature(float temperature) {
+        if (verifyTemperatureValid(this.temperatureInCelsius + temperature)) {
+            this.temperatureInCelsius =+ temperature;
         }
     }
 

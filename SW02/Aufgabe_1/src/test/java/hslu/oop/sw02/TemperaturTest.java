@@ -31,7 +31,7 @@ class TemperaturTest {
     void setToOver1000Kelvin() {
         Temperatur temperatur = new Temperatur(500);
 
-        temperatur.changeTemperatureInKelvin(1000);
+        temperatur.changeTemperature(1000);
 
 
         assertEquals(errorMessage, outContent.toString());
@@ -48,8 +48,7 @@ class TemperaturTest {
     void setToUnder0Kelvin() {
         Temperatur temperatur = new Temperatur(500);
 
-        temperatur.changeTemperatureInKelvin(-1000);
-
+        temperatur.changeTemperature(-1000);
 
         assertEquals(errorMessage, outContent.toString());
     }
