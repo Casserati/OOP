@@ -24,3 +24,22 @@ i = -2147483648 - 1 = 2147483647
 
 da das erste bit für das anzeigen der positiven als auch negativen Zahl ist und das erste Bit bei einer Negativen Zahl 1 ist
 
+
+c)
+float f = 3.4028235e38f
+
+float i = 3.4028235e38f + 1f = 3.4028235E38
+
+bei float werden nur die letzten 23 bits verwendet um die Geleitkommastelle darzustellen.
+Da die 1.0 bei diesen 23 bits nur mit 0 dargstellt wird, kann diese nicht addiert werden.
+1.0f => 0.0000000000000....00000 2^127
+
+JEDOCH wenn man eine Zahl wie z.b 1.0e38f hinzufügt erhaltet man folgendes:
+
+i = i = 3.4028235e38f + 1.0e38f = Infinity (float)
+
+d)
+float div = 2 + 5 / 2 = 4.0
+
+aber wenn das Casten gemacht wird; div = 2.0f + 5.0f / 2.0f = 4.5
+

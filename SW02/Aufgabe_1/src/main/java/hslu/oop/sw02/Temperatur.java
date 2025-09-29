@@ -73,8 +73,4 @@ public class Temperatur {
     private float fromCelsiusToKelvin(float temperatureInCelsius){
         return temperatureInCelsius + 273.15f;
     }
-
-    private float fromKelvinToCelsius(float temperatureInKelvin){
-        return temperatureInKelvin - 273.15f;
-    }
 }
