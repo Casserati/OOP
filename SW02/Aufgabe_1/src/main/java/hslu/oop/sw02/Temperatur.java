@@ -2,9 +2,9 @@ package hslu.oop.sw02;
 
 public class Temperatur {
 
-    ChemicalElement blei = new ChemicalElement(ChemicalFormular.Pb, 100.0f, 50.0f, 10.0f);
-    ChemicalElement stickStoff = new ChemicalElement(ChemicalFormular.N, 50.0f, 20.0f, -10.0f);
-    ChemicalElement queckSilver = new ChemicalElement(ChemicalFormular.Hg, 25.0f, 0.0f, -70.0f);
+    ChemicalElement blei = new ChemicalElement(ChemicalFormular.Pb, 10.0f, 50.0f);
+    ChemicalElement stickStoff = new ChemicalElement(ChemicalFormular.N, -10.0f, 20.0f);
+    ChemicalElement queckSilver = new ChemicalElement(ChemicalFormular.Hg, -70.0f, 0.0f);
 
 
     float temperatureInCelsius;

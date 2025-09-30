@@ -1,14 +1,14 @@
 package hslu.oop.sw02;
 
-public record ChemicalElement(ChemicalFormular chemicalFormula, float gasStateTemp, float liquidTemp, float solidState){
+public record ChemicalElement(ChemicalFormular chemicalFormula, float schmelzPunkt, float siedeTemp){
 
     public State getState(float temperature){
-        if (temperature >=  gasStateTemp){
-            return State.gasfoermig;
-        }else if (temperature < gasStateTemp && temperature >= liquidTemp){
+        if (temperature <  schmelzPunkt){
+            return State.fest;
+        }else if (temperature < siedeTemp){
             return State.fluessig;
         }else {
-            return State.fest;
+            return State.gasfoermig;
         }
     }
 }
