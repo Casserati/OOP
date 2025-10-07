@@ -26,6 +26,7 @@ public class Main {
         exerciseC(0.9f);
 
         printBox(10, 4);
+        printBox(1, 1);
     }
 
     private static void exerciseC(float initValue){
@@ -44,12 +45,12 @@ public class Main {
     }
 
     private static void printBox(final int width, final int height){
-        for (int i = 1; i <= height; i++){
+        for (int row = 1; row <= height; row++){
             System.out.print("\n");
-            for (int o = 1; o <= width; o++){
-                if (i == 1 || i == height){
+            for (int column = 1; column <= width; column++){
+                if (row == 1 || row == height){
                     System.out.print("#");
-                }else if (o == 1 || o == width){
+                }else if (column == 1 || column == width){
                     System.out.print("#");
                 }else{
                     System.out.print(" ");
