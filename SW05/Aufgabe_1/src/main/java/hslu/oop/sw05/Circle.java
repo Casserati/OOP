@@ -19,7 +19,7 @@ public final class Circle extends Shape {
 
     @Override
     public int getPerimeter() {
-        return (int) (2 * Math.PI * (getDiameter() / 2));
+        return (int) (Math.PI * getDiameter());
     }
 
     @Override
