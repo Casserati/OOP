@@ -2,12 +2,12 @@ package hslu.oop.sw04;
 
 import java.awt.*;
 
-public class LineProblemSolve {
+public class LineProblem {
 
     private Point startPoint;
     private Point endPoint;
 
-    public LineProblemSolve(Point startPoint, Point endPoint) {
+    public LineProblem(Point startPoint, Point endPoint) {
         this.startPoint = new Point(startPoint.getX(), startPoint.getY());
         this.endPoint = new Point(endPoint.getX(), endPoint.getY());
     }
