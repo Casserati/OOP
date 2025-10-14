@@ -1,0 +1,37 @@
+@startuml
+class hslu.oop.sw04.Engine {
+- State state
+- int rpm
++ void switchOn()
++ void switchOff()
++ boolean isSwitchedOn()
++ boolean isSwitchedOff()
+}
+
+
+enum hslu.oop.sw04.State {
++  ON
++  OFF
+}
+
+class hslu.oop.sw04.Car {
+- State state
++ void switchOn()
++ void switchOff()
++ boolean isSwitchedOn()
++ boolean isSwitchedOff()
+}
+
+
+interface hslu.oop.sw04.Switchable {
+~ void switchOn()
+~ void switchOff()
+~ boolean isSwitchedOn()
+~ boolean isSwitchedOff()
+}
+
+
+
+hslu.oop.sw04.Switchable <|.. hslu.oop.sw04.Engine
+hslu.oop.sw04.Switchable <|.. hslu.oop.sw04.Car
+@enduml

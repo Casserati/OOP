@@ -12,6 +12,6 @@ public class Main {
     }
 
     private int max(int value1, int value2, int value3) {
-        return Math.max(value1, Math.max(value2, value3));
+        return Math.max(value1, max(value2, value3));
     }
 }

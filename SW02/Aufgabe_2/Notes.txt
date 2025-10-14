@@ -34,9 +34,18 @@ bei float werden nur die letzten 23 bits verwendet um die Geleitkommastelle darz
 Da die 1.0 bei diesen 23 bits nur mit 0 dargstellt wird, kann diese nicht addiert werden.
 1.0f => 0.0000000000000....00000 2^127
 
+
 JEDOCH wenn man eine Zahl wie z.b 1.0e38f hinzufügt erhaltet man folgendes:
 
 i = i = 3.4028235e38f + 1.0e38f = Infinity (float)
+
+#########################################
+
+die Nummer 1 ist zu klein, dass diese die Zahl verändert 
+
+3.402835e38f wäre = 34028350000000000....... und die Zahl 1 wäre viel zu klein
+#########################################
+
 
 d)
 float div = 2 + 5 / 2 = 4.0
