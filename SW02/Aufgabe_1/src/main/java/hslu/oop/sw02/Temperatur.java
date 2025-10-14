@@ -2,11 +2,6 @@ package hslu.oop.sw02;
 
 public class Temperatur {
 
-    ChemicalElement blei = new ChemicalElement(ChemicalFormular.Pb, 10.0f, 50.0f);
-    ChemicalElement stickStoff = new ChemicalElement(ChemicalFormular.N, -10.0f, 20.0f);
-    ChemicalElement queckSilver = new ChemicalElement(ChemicalFormular.Hg, -70.0f, 0.0f);
-
-
     float temperatureInCelsius;
 
     /**
@@ -83,11 +78,11 @@ public class Temperatur {
         return chemicalElement.getState(temperatureInCelsius);
     }
 
-    private String returnStateBasedOnTempSwitch(String chemicalElement){
+    private String returnStateBasedOnTempSwitch(ChemicalElement chemicalElement){
         return switch (chemicalElement) {
-            case "Hg" -> returnStateBasedOnTemp(queckSilver).toString();
-            case "N" -> returnStateBasedOnTemp(stickStoff).toString();
-            case "Pb" -> returnStateBasedOnTemp(blei).toString();
+            case Mercury mercury -> returnStateBasedOnTemp(mercury).toString();
+            case Nitrogen nitrogen -> returnStateBasedOnTemp(nitrogen).toString();
+            case Lead lead -> returnStateBasedOnTemp(lead).toString();
             default -> {
                 System.out.println("Sie haben kein gültiges Element verwendet");
                 yield "Error";

@@ -1,6 +1,16 @@
 package hslu.oop.sw02;
 
-public record ChemicalElement(ChemicalFormular chemicalFormula, float schmelzPunkt, float siedeTemp){
+public abstract class ChemicalElement{
+
+    private final ChemicalFormula chemicalFormula;
+    private final float schmelzPunkt;
+    private final float siedeTemp;
+
+    public ChemicalElement(final ChemicalFormula chemicalFormula, final float schmelzPunkt, final float siedeTemp) {
+        this.chemicalFormula = chemicalFormula;
+        this.schmelzPunkt = schmelzPunkt;
+        this.siedeTemp = siedeTemp;
+    }
 
     public State getState(float temperature){
         if (temperature <  schmelzPunkt){
@@ -10,6 +20,10 @@ public record ChemicalElement(ChemicalFormular chemicalFormula, float schmelzPun
         }else {
             return State.gasfoermig;
         }
+    }
+
+    public ChemicalFormula getChemicalFormula() {
+        return this.chemicalFormula;
     }
 }
 

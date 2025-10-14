@@ -1,5 +1,5 @@
 package hslu.oop.sw02;
 
-public enum ChemicalFormular {
+public enum ChemicalFormula {
     Pb, N, Hg
 }
