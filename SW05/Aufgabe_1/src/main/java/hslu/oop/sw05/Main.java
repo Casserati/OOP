@@ -8,9 +8,19 @@ public class Main {
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
 
-        Circle circle = new Circle(10, 10, 20);
-        Rectangle rectangle = new Rectangle(10, 10, 20, 30);
+        /**
+         * Shape => statischer Datentyp, Circle/Rectangle dynamischer Datentyp
+         * dynamische Datentypen können während der Runtime verändert werden. Statice
+         * Datentypen bleiben während der ganzen Runtime der gleiche Datentyp
+         *
+         */
+        Shape shape1 = new Circle(10, 10, 20);
+        Shape shape2 = new Rectangle(10, 10, 20, 30);
 
+        shape1.move(20, 20);
+        shape2.move(30, 30);
+
+        System.out.println(((Circle)shape1).getDiameter());
 
         for (int i = 1; i <= 5; i++) {
             //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
