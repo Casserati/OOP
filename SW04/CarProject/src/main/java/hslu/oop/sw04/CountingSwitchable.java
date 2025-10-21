@@ -2,22 +2,26 @@ package hslu.oop.sw04;
 
 public abstract class CountingSwitchable implements Switchable, Named{
 
+    private int switchCounter;
     private String name;
     private State state;
 
     @Override
     public void switchOn() {
         this.state = State.ON;
+        System.out.println("Switching on");
+        this.switchCounter++;
     }
 
     @Override
     public void switchOff() {
         this.state = State.OFF;
+        System.out.println("Switching off");
     }
 
     @Override
     public boolean isSwitchedOn() {
-        return state == State.ON;
+            return state == State.ON;
     }
 
     @Override
@@ -35,5 +39,7 @@ public abstract class CountingSwitchable implements Switchable, Named{
         this.name = name;
     }
 
-    public abstract long getSwitchCount();
+    public long getSwitchCount(){
+        return this.switchCounter;
+    }
 }

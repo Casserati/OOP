@@ -1,28 +1,19 @@
 package hslu.oop.sw04;
 
-public class AC implements Switchable {
+public class AC extends CountingSwitchable {
 
-    private State state;
+    public AC(String name) {
+        super.setName(name);
+    }
 
     @Override
     public void switchOn() {
-        this.state = State.ON;
-        System.out.println("AC switched on");
+        super.switchOn();
+        System.out.println("Switching on AC");
     }
 
-    @Override
     public void switchOff() {
-        this.state = State.OFF;
-        System.out.println("AC switched off");
-    }
-
-    @Override
-    public boolean isSwitchedOn() {
-        return this.state == State.ON;
-    }
-
-    @Override
-    public boolean isSwitchedOff() {
-        return this.state == State.OFF;
+        super.switchOff();
+        System.out.println("Switching off AC");
     }
 }

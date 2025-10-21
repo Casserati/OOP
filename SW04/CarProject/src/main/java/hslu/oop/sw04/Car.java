@@ -1,34 +1,34 @@
 package hslu.oop.sw04;
 
-public class Car implements Switchable {
+import java.util.ArrayList;
+import java.util.List;
 
-    private State state;
-    private Switchable ac = new AC();
-    private Switchable engine = new Engine();
+public class Car extends CountingSwitchable {
+
+    private final List<CountingSwitchable> switchableList = new ArrayList<>();
+
+    public Car() {
+        switchableList.add(new AC("AC"));
+        switchableList.add(new Engine("RB26"));
+    }
 
     @Override
     public void switchOn() {
-        this.state = State.ON;
-        this.engine.switchOn();
-        this.ac.switchOn();
-        System.out.println("Car switch on");
+        super.switchOn();
+        System.out.println("Switching on Car");
+        //switchableList.forEach(CountingSwitchable::switchOn); //Method reference
+        switchableList.forEach(switchable -> switchable.switchOn()); //Lamda
     }
 
     @Override
     public void switchOff() {
-        this.state = State.OFF;
-        this.engine.switchOff();
-        this.ac.switchOff();
-        System.out.println("Car switch off");
+        super.switchOff();
+        System.out.println("Switching off Car");
+        switchableList.forEach(CountingSwitchable::switchOff);
     }
 
     @Override
-    public boolean isSwitchedOn() {
-        return this.state == State.ON;
-    }
-
-    @Override
-    public boolean isSwitchedOff() {
-        return this.state == State.OFF;
+    public long getSwitchCount() {
+        return super.getSwitchCount() + switchableList.stream().mapToLong(CountingSwitchable::getSwitchCount).sum();
     }
 }

@@ -1,29 +1,24 @@
 package hslu.oop.sw04;
 
-public class Engine implements Switchable{
+public class Engine extends CountingSwitchable{
 
-    private State state;
     private int rpm;
+
+    public Engine(String name){
+        super.setName(name);
+    }
 
     @Override
     public void switchOn() {
-        this.state = State.ON;
-        System.out.println("Switching on");
+        super.switchOn();
+        System.out.println("Switching on Engine");
+        this.rpm = 500;
     }
 
     @Override
     public void switchOff() {
-        this.state = State.OFF;
-        System.out.println("Switching off");
-    }
-
-    @Override
-    public boolean isSwitchedOn() {
-        return this.state == State.ON;
-    }
-
-    @Override
-    public boolean isSwitchedOff() {
-        return this.state == State.OFF;
+        super.switchOff();
+        System.out.println("Switching off Engine");
+        this.rpm = 0;
     }
 }
