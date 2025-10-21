@@ -35,4 +35,22 @@ public class Point
     public int getY() {
         return yCoordinate;
     }
+
+    // Aufgabe a
+    public void moveRelative(int x, int y){
+        this.xCoordinate += x;
+        this.yCoordinate += y;
+    }
+
+    // Aufgabe b
+    public void moveRelative(Point point){
+        this.xCoordinate += point.getX();
+        this.yCoordinate += point.getY();
+    }
+
+    // Aufgabe c
+    public void moveRelative(double angle, int value){
+        this.xCoordinate += (int) (value * Math.cos(angle));
+        this.yCoordinate += (int) (value * Math.sin(angle));
+    }
 }
