@@ -4,52 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac7b7427-9d55-42f3-a67b-6ae2b0d8bd9b" name="Changes" comment="" />
+    <list default="true" id="dcb7ad4d-4edf-41ab-9b5c-ee566565061c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Casserati"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Casserati/OOP.git",
-    "accountId": "7f91d7a5-d462-4799-a1e7-1404b96ff95d"
-  }
-}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
+  "associatedIndex": 4
 }]]></component>
-  <component name="ProjectId" id="34NR2R2CL8RsiWYtE4z55MOebSE" />
+  <component name="ProjectId" id="34NViLx7VBXXAEMZsT6W2xJJ9cB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "SW06",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/franc/Documents/1_Semester/OOP/SW06/UnitTestingIntro/src/main/java/hslu/oop/sw06/Main.java",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -61,23 +32,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac7b7427-9d55-42f3-a67b-6ae2b0d8bd9b" name="Changes" comment="" />
-      <created>1761051835803</created>
+      <changelist id="dcb7ad4d-4edf-41ab-9b5c-ee566565061c" name="Changes" comment="" />
+      <created>1761054144766</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1761051835803</updated>
+      <updated>1761054144766</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hslu/oop/sw06/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
