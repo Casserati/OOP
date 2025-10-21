@@ -21,4 +21,8 @@ public class Engine extends CountingSwitchable{
         System.out.println("Switching off Engine");
         this.rpm = 0;
     }
+
+    public int getRpm() {
+        return this.rpm;
+    }
 }

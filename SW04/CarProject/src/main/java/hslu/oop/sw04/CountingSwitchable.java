@@ -29,12 +29,12 @@ public abstract class CountingSwitchable implements Switchable, Named{
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
     public void setName(final String finalName) {
-        this.name = name;
+        this.name = finalName;
     }
 
     public long getSwitchCount(){
