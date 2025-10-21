@@ -8,8 +8,8 @@ public class LineProblem {
     private Point endPoint;
 
     public LineProblem(Point startPoint, Point endPoint) {
-        this.startPoint = new Point(startPoint.getX(), startPoint.getY());
-        this.endPoint = new Point(endPoint.getX(), endPoint.getY());
+        this.startPoint = new Point(this.startPoint.getX(), this.startPoint.getY());
+        this.endPoint = new Point(this.endPoint.getX(), this.endPoint.getY());
     }
 
     public Point getStartPoint() {

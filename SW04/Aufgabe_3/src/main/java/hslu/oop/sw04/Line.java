@@ -1,7 +1,5 @@
 package hslu.oop.sw04;
 
-import java.awt.*;
-
 public class Line {
 
     private Point startPoint;
