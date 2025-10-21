@@ -73,4 +73,20 @@ public class Temperatur {
     private float fromCelsiusToKelvin(float temperatureInCelsius){
         return temperatureInCelsius + 273.15f;
     }
+
+    private State returnStateBasedOnTemp(ChemicalElement chemicalElement){
+        return chemicalElement.getState(temperatureInCelsius);
+    }
+
+    private String returnStateBasedOnTempSwitch(ChemicalElement chemicalElement){
+        return switch (chemicalElement) {
+            case Mercury mercury -> returnStateBasedOnTemp(mercury).toString();
+            case Nitrogen nitrogen -> returnStateBasedOnTemp(nitrogen).toString();
+            case Lead lead -> returnStateBasedOnTemp(lead).toString();
+            default -> {
+                System.out.println("Sie haben kein gültiges Element verwendet");
+                yield "Error";
+            }
+        };
+    }
 }
