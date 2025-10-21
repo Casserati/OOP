@@ -9,14 +9,12 @@ public abstract class CountingSwitchable implements Switchable, Named{
     @Override
     public void switchOn() {
         this.state = State.ON;
-        System.out.println("Switching on");
         this.switchCounter++;
     }
 
     @Override
     public void switchOff() {
         this.state = State.OFF;
-        System.out.println("Switching off");
     }
 
     @Override

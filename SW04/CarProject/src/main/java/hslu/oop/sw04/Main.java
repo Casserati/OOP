@@ -12,6 +12,9 @@ public class Main {
 
         car.switchOn();
 
+        car.switchOffComponent(AC.class);
+        car.switchOnComponent(AC.class);
+
         System.out.println(car.getSwitchCount());
 
         for (int i = 1; i <= 5; i++) {
