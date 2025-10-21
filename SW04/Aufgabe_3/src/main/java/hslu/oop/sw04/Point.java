@@ -10,6 +10,10 @@ public class Point
         this.yCoordinate = y;
     }
 
+    public Point(Point point){
+        this(point.xCoordinate, point.yCoordinate);
+    }
+
     public int getQuadrant(){
         if (xCoordinate > 0 && yCoordinate > 0){
             return 1;
