@@ -19,15 +19,13 @@ class CalculatorTest {
         Assertions.assertEquals(-8, calculator.addition(-3,-5));
     }
 
-
-
     @Test
-    void testAddition_twoOverflowNumbers() {
-        Assertions.assertEquals(-2147483648, calculator.addition(2147483647,1));
+    void testAddition_twoOverflowNumbers_notNegative() {
+        Assertions.assertNotEquals(-2147483648, calculator.addition(2147483647,1));
     }
 
     @Test
-    void testAddition_twoOverflowNumbersNegative() {
-        Assertions.assertEquals(2147483647, calculator.addition(-2147483648,-1));
+    void testAddition_twoOverflowNumbersNegative_notPositive() {
+        Assertions.assertNotEquals(2147483647, calculator.addition(-2147483648,-1));
     }
 }

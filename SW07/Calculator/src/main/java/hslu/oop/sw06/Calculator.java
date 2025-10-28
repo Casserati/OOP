@@ -6,7 +6,7 @@ public interface Calculator {
      * addition method for calculating two integers together
      * @param a
      * @param b
-     * @return sum of a and b
+     * @return sum of a and b as a long
      */
-    int addition(int a, int b);
+    long addition(int a, int b);
 }
