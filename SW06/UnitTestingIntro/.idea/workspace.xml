@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcb7ad4d-4edf-41ab-9b5c-ee566565061c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/hslu/oop/sw06/CalcMaxTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/hslu/oop/sw06/CalcMaxTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/src/main/java/hslu/oop/sw06/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/src/main/java/hslu/oop/sw06/CalculatorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/src/main/java/hslu/oop/sw06/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SW07/Calculator/src/test/java/hslu/oop/sw06/CalculatorTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
