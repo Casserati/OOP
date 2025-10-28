@@ -48,13 +48,11 @@ public class Point
 
     // Aufgabe b
     public void moveRelative(Point point){
-        this.xCoordinate += point.getX();
-        this.yCoordinate += point.getY();
+        moveRelative(point.getX(), point.getY());
     }
 
     // Aufgabe c
-    public void moveRelative(double angle, int value){
-        this.xCoordinate += (int) (value * Math.cos(angle));
-        this.yCoordinate += (int) (value * Math.sin(angle));
+    public void moveRelativeToPolar(double angle, int value){
+        moveRelative((int) (value * Math.cos(angle)),(int) (value * Math.sin(angle)));
     }
 }
