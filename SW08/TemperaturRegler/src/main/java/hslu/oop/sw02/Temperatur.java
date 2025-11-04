@@ -1,0 +1,117 @@
+package hslu.oop.sw02;
+
+public class Temperatur implements Comparable<Temperatur>{
+
+    private static final float KELVIN_OFFSET = 273.15f;
+    float temperatureInCelsius;
+
+    /**
+     * Default Constructor
+     * sets default temperature to 20 degree Celsius
+     */
+    public Temperatur() {
+        this.temperatureInCelsius = 20.0f;
+    }
+
+    /**
+     * Constructor
+     * sets default temperature to given float value degree Celsius
+     */
+    public Temperatur(float temperatureInCelsius) {
+        if (verifyTemperatureValid(temperatureInCelsius)){
+            this.temperatureInCelsius = temperatureInCelsius;
+        }
+    }
+
+    public static float fromCelsiusToFahrenheit(float temperatureInCelsius) {
+        return temperatureInCelsius * 1.8f + 32f;
+    }
+
+    public static float fromCelsiusToKelvin(float temperatureInCelsius){
+        return temperatureInCelsius + KELVIN_OFFSET;
+    }
+
+    public static float fromKelvinToCelsius(float temperatureInKelvin){
+        return temperatureInKelvin - KELVIN_OFFSET;
+    }
+
+    public float getTemperatureInCelsius() {
+        return temperatureInCelsius;
+    }
+
+    public void setTemperatureInCelsius(float temperatureInCelsius) {
+        if (verifyTemperatureValid(temperatureInCelsius)) {
+            this.temperatureInCelsius = temperatureInCelsius;
+        }
+    }
+
+    /**
+     * @return current temperature of class in Kelvin
+     */
+    public float getTemperatureInKelvin() {
+        return fromCelsiusToKelvin(temperatureInCelsius);
+    }
+
+    /**
+     * @return current temperature of class in Fahrenheit
+     */
+    public float getTemperatureInFahrenheit() {
+        return fromCelsiusToFahrenheit(temperatureInCelsius);
+    }
+
+    /**
+     * changes temperature relative to given value
+     *
+     * @param temperature relative temperature
+     */
+    public void changeTemperature(float temperature) {
+        if (verifyTemperatureValid(this.temperatureInCelsius + temperature)) {
+            this.temperatureInCelsius =+ temperature;
+        }
+    }
+
+    @Override
+    public int compareTo(Temperatur o) {
+        return 0;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashes();
+    }
+
+    private boolean verifyTemperatureValid(float value) {
+        if (fromCelsiusToKelvin(value) > 1000f || fromCelsiusToKelvin(value) < 0f) {
+            System.out.println("Temperatur ist nicht gültig für den gegebenen Wertebereich!");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private State returnStateBasedOnTemp(ChemicalElement chemicalElement){
+        return chemicalElement.getState(temperatureInCelsius);
+    }
+
+    private String returnStateBasedOnTempSwitch(ChemicalElement chemicalElement){
+        return switch (chemicalElement) {
+            case Mercury mercury -> returnStateBasedOnTemp(mercury).toString();
+            case Nitrogen nitrogen -> returnStateBasedOnTemp(nitrogen).toString();
+            case Lead lead -> returnStateBasedOnTemp(lead).toString();
+            default -> {
+                System.out.println("Sie haben kein gültiges Element verwendet");
+                yield "Error";
+            }
+        };
+    }
+}
