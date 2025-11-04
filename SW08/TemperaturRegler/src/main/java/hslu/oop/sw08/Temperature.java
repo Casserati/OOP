@@ -114,13 +114,17 @@ public final class Temperature implements Comparable<Temperature> {
 
     private String returnStateBasedOnTempSwitch(ChemicalElement chemicalElement) {
         return switch (chemicalElement) {
-            case Mercury mercury -> returnStateBasedOnTemp(mercury).toString();
-            case Nitrogen nitrogen -> returnStateBasedOnTemp(nitrogen).toString();
-            case Lead lead -> returnStateBasedOnTemp(lead).toString();
+            case Mercury mercury -> output(mercury, returnStateBasedOnTemp(mercury));
+            case Nitrogen nitrogen -> output(nitrogen, returnStateBasedOnTemp(nitrogen));
+            case Lead lead -> output(lead, returnStateBasedOnTemp(lead));
             default -> {
                 System.out.println("Sie haben kein gültiges Element verwendet");
                 yield "Error";
             }
         };
+    }
+
+    private String output(ChemicalElement element, State currentState) {
+        return element.getChemicalFormula().getValue() + "ist bei " + temperatureInCelsius + "°C " + currentState.getValue();
     }
 }

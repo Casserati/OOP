@@ -14,11 +14,11 @@ public abstract class ChemicalElement{
 
     public State getState(float temperature){
         if (temperature <  schmelzPunkt){
-            return State.fest;
+            return State.SOLID;
         }else if (temperature < siedeTemp){
-            return State.fluessig;
+            return State.FLUID;
         }else {
-            return State.gasfoermig;
+            return State.GAS;
         }
     }
 
