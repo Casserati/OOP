@@ -1,6 +1,8 @@
-package hslu.oop.sw02;
+package hslu.oop.sw08;
 
-public class Temperatur implements Comparable<Temperatur>{
+import java.util.Objects;
+
+public final class Temperature implements Comparable<Temperature> {
 
     private static final float KELVIN_OFFSET = 273.15f;
     float temperatureInCelsius;
@@ -9,7 +11,7 @@ public class Temperatur implements Comparable<Temperatur>{
      * Default Constructor
      * sets default temperature to 20 degree Celsius
      */
-    public Temperatur() {
+    public Temperature() {
         this.temperatureInCelsius = 20.0f;
     }
 
@@ -17,8 +19,8 @@ public class Temperatur implements Comparable<Temperatur>{
      * Constructor
      * sets default temperature to given float value degree Celsius
      */
-    public Temperatur(float temperatureInCelsius) {
-        if (verifyTemperatureValid(temperatureInCelsius)){
+    public Temperature(float temperatureInCelsius) {
+        if (verifyTemperatureValid(temperatureInCelsius)) {
             this.temperatureInCelsius = temperatureInCelsius;
         }
     }
@@ -27,11 +29,11 @@ public class Temperatur implements Comparable<Temperatur>{
         return temperatureInCelsius * 1.8f + 32f;
     }
 
-    public static float fromCelsiusToKelvin(float temperatureInCelsius){
+    public static float fromCelsiusToKelvin(float temperatureInCelsius) {
         return temperatureInCelsius + KELVIN_OFFSET;
     }
 
-    public static float fromKelvinToCelsius(float temperatureInKelvin){
+    public static float fromKelvinToCelsius(float temperatureInKelvin) {
         return temperatureInKelvin - KELVIN_OFFSET;
     }
 
@@ -66,28 +68,35 @@ public class Temperatur implements Comparable<Temperatur>{
      */
     public void changeTemperature(float temperature) {
         if (verifyTemperatureValid(this.temperatureInCelsius + temperature)) {
-            this.temperatureInCelsius =+ temperature;
+            this.temperatureInCelsius = +temperature;
         }
     }
 
     @Override
-    public int compareTo(Temperatur o) {
-        return 0;
+    public int compareTo(Temperature o) {
+        return Float.compare(this.temperatureInCelsius, o.temperatureInCelsius);
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Temperatur{" +
+                "temperatureInCelsius=" + this.temperatureInCelsius +
+                '}';
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(final Object object) {
+        if (object == this) {
+            return true;
+        }
+        return (object instanceof Temperature temp)
+                && (temp.temperatureInCelsius == this.temperatureInCelsius);
     }
+
 
     @Override
     public int hashCode() {
-        return super.hashes();
+        return Objects.hash(this.temperatureInCelsius);
     }
 
     private boolean verifyTemperatureValid(float value) {
@@ -99,11 +108,11 @@ public class Temperatur implements Comparable<Temperatur>{
         }
     }
 
-    private State returnStateBasedOnTemp(ChemicalElement chemicalElement){
+    private State returnStateBasedOnTemp(ChemicalElement chemicalElement) {
         return chemicalElement.getState(temperatureInCelsius);
     }
 
-    private String returnStateBasedOnTempSwitch(ChemicalElement chemicalElement){
+    private String returnStateBasedOnTempSwitch(ChemicalElement chemicalElement) {
         return switch (chemicalElement) {
             case Mercury mercury -> returnStateBasedOnTemp(mercury).toString();
             case Nitrogen nitrogen -> returnStateBasedOnTemp(nitrogen).toString();

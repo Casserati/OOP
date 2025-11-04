@@ -1,4 +1,4 @@
-package hslu.oop.sw02;
+package hslu.oop.sw08;
 
 public abstract class ChemicalElement{
 

@@ -1,4 +1,4 @@
-package hslu.oop.sw02;
+package hslu.oop.sw08;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +11,7 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class TemperaturTest {
+class TemperatureTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -29,9 +29,9 @@ class TemperaturTest {
 
     @Test
     void setToOver1000Kelvin() {
-        Temperatur temperatur = new Temperatur(500);
+        Temperature temperature = new Temperature(500);
 
-        temperatur.changeTemperature(1000);
+        temperature.changeTemperature(1000);
 
 
         assertEquals(errorMessage, outContent.toString());
@@ -39,24 +39,36 @@ class TemperaturTest {
 
     @Test
     void initTempOver1000Kelvin() {
-        Temperatur temperatur = new Temperatur(1000);
+        Temperature temperature = new Temperature(1000);
 
         assertEquals(errorMessage, outContent.toString());
     }
 
     @Test
     void setToUnder0Kelvin() {
-        Temperatur temperatur = new Temperatur(500);
+        Temperature temperature = new Temperature(500);
 
-        temperatur.changeTemperature(-1000);
+        temperature.changeTemperature(-1000);
 
         assertEquals(errorMessage, outContent.toString());
     }
 
     @Test
     void initTempUnder0Kelvin() {
-        Temperatur temperatur = new Temperatur(-500);
+        Temperature temperature = new Temperature(-500);
 
         assertEquals(errorMessage, outContent.toString());
+    }
+
+    @Test
+    void test_tempChange_KelvinToCelsius(){
+        float expectedKelvin = 273.15f;
+        assertEquals(expectedKelvin, Temperature.fromCelsiusToKelvin(0));
+    }
+
+    @Test
+    void test_tempChange_CelsiusToKelvin(){
+        float expectedCelcius = 0.0f;
+        assertEquals(expectedCelcius, Temperature.fromKelvinToCelsius(273.15f));
     }
 }
