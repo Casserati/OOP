@@ -1,6 +1,7 @@
 package hslu.oop.sw10;
 
 import hslu.oop.sw10.collections.TemperatureVerlaufImpl;
+import hslu.oop.sw10.collections.event.TemperatureEventHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,27 +13,30 @@ public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    private static final TemperatureVerlaufImpl temperatureVerlauf = new TemperatureVerlaufImpl();
     private static final Scanner scanner = new Scanner(System.in);
+    private static TemperatureEventHandler handler = new TemperatureEventHandler();
 
     public static void main(String[] args) {
-        System.out.println("Temperature in Celsius (or 'exit' to exit):");
-        String input = scanner.next();
-
-        if (!input.equals("exit")) {
-            try {
-                Temperature created = Temperature.createFromCelsius(Float.parseFloat(input));
-                LOGGER.info("Temperature created: {}", created);
-                temperatureVerlauf.add(created);
-                LOGGER.info("Temperature was successfully inserted into the list! Size now: {}", temperatureVerlauf.getCount());
-            } catch (IllegalArgumentException ex) {
-                LOGGER.error(ex.getMessage());
+        TemperatureVerlaufImpl temperatureVerlauf = handler.getTemperatureVerlauf();
+        String input;
+        do {
+            System.out.println("Temperature in Celsius (or 'exit' to exit):");
+            input = scanner.next();
+            if (!input.equals("exit")) {
+                try {
+                    Temperature created = Temperature.createFromCelsius(Float.parseFloat(input));
+                    LOGGER.info("Temperature created: {}", created);
+                    temperatureVerlauf.add(created);
+                    LOGGER.info("Temperature was successfully inserted into the list! Size now: {}", temperatureVerlauf.getCount());
+                } catch (IllegalArgumentException ex) {
+                    LOGGER.error(ex.getMessage());
+                }
+            } else {
+                LOGGER.info("Amount Temperatures were: {}", temperatureVerlauf.getCount());
+                LOGGER.info("Minimal Temperature was: {}", temperatureVerlauf.getMinValue());
+                LOGGER.info("Maximal Temperature was: {}", temperatureVerlauf.getMaxValue());
+                LOGGER.info("Average Temperature was: {}", temperatureVerlauf.getAverage());
             }
-        }else{
-            LOGGER.info("Amount Temperatures were: {}", temperatureVerlauf.getCount());
-            LOGGER.info("Minimal Temperature was: {}", temperatureVerlauf.getMinValue());
-            LOGGER.info("Maximal Temperature was: {}", temperatureVerlauf.getMaxValue());
-            LOGGER.info("Average Temperature was: {}", temperatureVerlauf.getAverage());
-        }
+        } while (!input.equals("exit"));
     }
 }
