@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Car extends CountingSwitchable implements PropertyChangeListener {
 
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+    private static final Logger LOGGER = LogManager.getLogger(Car.class);
 
     private final List<CountingSwitchable> switchableList = new ArrayList<>();
 
