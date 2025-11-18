@@ -12,8 +12,8 @@ public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    private static TemperatureVerlaufImpl temperatureVerlauf = new TemperatureVerlaufImpl();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final TemperatureVerlaufImpl temperatureVerlauf = new TemperatureVerlaufImpl();
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         System.out.println("Temperature in Celsius (or 'exit' to exit):");
