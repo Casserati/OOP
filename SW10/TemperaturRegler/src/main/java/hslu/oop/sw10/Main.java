@@ -28,6 +28,11 @@ public class Main {
             } catch (IllegalArgumentException ex) {
                 LOGGER.error(ex.getMessage());
             }
+        }else{
+            LOGGER.info("Amount Temperatures were: {}", temperatureVerlauf.getCount());
+            LOGGER.info("Minimal Temperature was: {}", temperatureVerlauf.getMinValue());
+            LOGGER.info("Maximal Temperature was: {}", temperatureVerlauf.getMaxValue());
+            LOGGER.info("Average Temperature was: {}", temperatureVerlauf.getAverage());
         }
     }
 }
