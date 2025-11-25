@@ -35,19 +35,15 @@ public class Engine extends CountingSwitchable {
         return this.rpm;
     }
 
-    public void addPropertyChangeListener(final PropertyChangeListener listener) {
-        if (listener != null) {
-            this.changeListeners.add(listener);
-        }
+    public void addPropertyChangeListener(final PropertyChangeListener listener){
+        this.changeListeners.add(listener);
     }
 
-    public void removePropertyChangeListener(final PropertyChangeListener listener) {
-        if (listener != null) {
-            this.changeListeners.remove(listener);
-        }
+    public void removePropertyChangeListener(final PropertyChangeListener listener){
+        this.changeListeners.remove(listener);
     }
 
-    private void firePropertyChangeEvent(PropertyChangeEvent event) {
+    private void firePropertyChangeEvent(PropertyChangeEvent event){
         for (final PropertyChangeListener listener : this.changeListeners) {
             listener.propertyChange(event);
         }
