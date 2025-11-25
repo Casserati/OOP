@@ -5,12 +5,12 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Engine extends CountingSwitchable{
+public class Engine extends CountingSwitchable {
 
     private final List<PropertyChangeListener> changeListeners = new ArrayList<>();
     private int rpm;
 
-    public Engine(String name){
+    public Engine(String name) {
         super.setName(name);
     }
 
@@ -18,7 +18,7 @@ public class Engine extends CountingSwitchable{
     public void switchOn() {
         super.switchOn();
         final PropertyChangeEvent event =
-                new PropertyChangeEvent(this,"state",State.ON,State.OFF);
+                new PropertyChangeEvent(this, "state", State.ON, State.OFF);
         this.firePropertyChangeEvent(event);
         System.out.println("Switching on Engine");
         this.rpm = 500;
@@ -35,15 +35,19 @@ public class Engine extends CountingSwitchable{
         return this.rpm;
     }
 
-    public void addPropertyChangeListener(final PropertyChangeListener listener){
-        this.changeListeners.add(listener);
+    public void addPropertyChangeListener(final PropertyChangeListener listener) {
+        if (listener != null) {
+            this.changeListeners.add(listener);
+        }
     }
 
-    public void removePropertyChangeListener(final PropertyChangeListener listener){
-        this.changeListeners.remove(listener);
+    public void removePropertyChangeListener(final PropertyChangeListener listener) {
+        if (listener != null) {
+            this.changeListeners.remove(listener);
+        }
     }
 
-    private void firePropertyChangeEvent(PropertyChangeEvent event){
+    private void firePropertyChangeEvent(PropertyChangeEvent event) {
         for (final PropertyChangeListener listener : this.changeListeners) {
             listener.propertyChange(event);
         }
