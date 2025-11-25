@@ -5,8 +5,6 @@ import hslu.oop.sw10.Temperature;
 import hslu.oop.sw10.event.EventType;
 import hslu.oop.sw10.event.TemperatureEvent;
 import hslu.oop.sw10.event.TemperatureEventListener;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.*;
 
