@@ -1,6 +1,8 @@
 package hslu.oop.sw10.collections.event;
 
 import hslu.oop.sw10.Temperature;
+import hslu.oop.sw10.event.EventType;
+import hslu.oop.sw10.event.TemperatureEvent;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

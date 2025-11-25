@@ -1,12 +1,11 @@
 package hslu.oop.sw10;
 
 import hslu.oop.sw10.collections.TemperatureVerlaufImpl;
-import hslu.oop.sw10.collections.event.TemperatureEventHandler;
+import hslu.oop.sw10.event.TemperatureEventHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 

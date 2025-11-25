@@ -2,13 +2,12 @@ package hslu.oop.sw10.collections;
 
 import hslu.oop.sw10.Temperature;
 
-import hslu.oop.sw10.collections.event.EventType;
-import hslu.oop.sw10.collections.event.TemperatureEvent;
-import hslu.oop.sw10.collections.event.TemperatureEventListener;
+import hslu.oop.sw10.event.EventType;
+import hslu.oop.sw10.event.TemperatureEvent;
+import hslu.oop.sw10.event.TemperatureEventListener;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.beans.PropertyChangeListener;
 import java.util.*;
 
 public class TemperatureVerlaufImpl implements TemperatureVerlauf {
@@ -22,10 +21,10 @@ public class TemperatureVerlaufImpl implements TemperatureVerlauf {
         Temperature currentMax = getMaxValue();
         Temperature currentMin = getMinValue();
         this.temperatureSet.add(temperature);
-        if (currentMin != null && !currentMin.equals(getMinValue())) {
+        if (!getMinValue().equals(currentMin)) {
             fireEvent(new TemperatureEvent(this, getMinValue(), EventType.MinEvent));
         }
-        if (currentMax != null && !currentMax.equals(getMaxValue())) {
+        if (!getMaxValue().equals(currentMax)) {
             fireEvent(new TemperatureEvent(this, getMaxValue(), EventType.MaxEvent));
         }
     }

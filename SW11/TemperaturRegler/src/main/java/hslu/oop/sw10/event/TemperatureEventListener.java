@@ -1,4 +1,4 @@
-package hslu.oop.sw10.collections.event;
+package hslu.oop.sw10.event;
 
 
 import java.util.EventListener;
