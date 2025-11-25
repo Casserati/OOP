@@ -22,10 +22,10 @@ public class TemperatureVerlaufImpl implements TemperatureVerlauf {
         Temperature currentMax = getMaxValue();
         Temperature currentMin = getMinValue();
         this.temperatureSet.add(temperature);
-        if (currentMin != null && !currentMin.equals(getMinValue())) {
+        if (!getMinValue().equals(currentMin)) {
             fireEvent(new TemperatureEvent(this, getMinValue(), EventType.MinEvent));
         }
-        if (currentMax != null && !currentMax.equals(getMaxValue())) {
+        if (!getMaxValue().equals(currentMax)) {
             fireEvent(new TemperatureEvent(this, getMaxValue(), EventType.MaxEvent));
         }
     }
