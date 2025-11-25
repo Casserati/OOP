@@ -13,7 +13,6 @@ import java.util.*;
 public class TemperatureVerlaufImpl implements TemperatureVerlauf {
 
     private final List<TemperatureEventListener> temperatureEventListeners = new ArrayList<>();
-    private static final Logger LOGGER = LogManager.getLogger(TemperatureVerlaufImpl.class);
 
     List<Temperature> temperatureSet = new ArrayList<>();
 
