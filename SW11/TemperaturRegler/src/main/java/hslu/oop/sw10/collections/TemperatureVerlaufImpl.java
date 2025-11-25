@@ -18,14 +18,14 @@ public class TemperatureVerlaufImpl implements TemperatureVerlauf {
     List<Temperature> temperatureSet = new ArrayList<>();
 
     public void add(Temperature temperature) {
+        this.temperatureSet.add(temperature);
         Temperature currentMax = getMaxValue();
         Temperature currentMin = getMinValue();
-        this.temperatureSet.add(temperature);
-        if (!getMinValue().equals(currentMin)) {
-            fireEvent(new TemperatureEvent(this, getMinValue(), EventType.MinEvent));
+        if (temperature.equals(currentMin)) {
+            fireEvent(new TemperatureEvent(this, currentMax, EventType.MinEvent));
         }
-        if (!getMaxValue().equals(currentMax)) {
-            fireEvent(new TemperatureEvent(this, getMaxValue(), EventType.MaxEvent));
+        if (temperature.equals(currentMax)) {
+            fireEvent(new TemperatureEvent(this, currentMin, EventType.MaxEvent));
         }
     }
 
