@@ -25,7 +25,7 @@ public class CsvReader {
             String line;
 
             while ((line = br.readLine()) != null) {
-                // Split the line by comma
+                // Split the line by semicolon
                 String[] fields = line.split(";");
 
                 measurements.add(new Measurement(Converter.convertToCelsiusTemperature(fields[2]),
@@ -36,11 +36,11 @@ public class CsvReader {
         } catch (IOException ex) {
             LOGGER.error("Error occurred trying to read file");
             LOGGER.error(ex.getMessage());
-            return Collections.emptyList();
+            return null;
         } catch (DateTimeParseException ex) {
             LOGGER.error("Error trying to parse date from file");
             LOGGER.error(ex.getMessage());
-            return Collections.emptyList();
+            return null;
         }
     }
 }
