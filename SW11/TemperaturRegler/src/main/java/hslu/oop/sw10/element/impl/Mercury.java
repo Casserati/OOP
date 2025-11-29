@@ -1,6 +1,9 @@
-package hslu.oop.sw10;
+package hslu.oop.sw10.element.impl;
 
-public class Mercury extends  ChemicalElement {
+import hslu.oop.sw10.element.ChemicalElement;
+import hslu.oop.sw10.element.ChemicalFormula;
+
+public class Mercury extends ChemicalElement {
 
     public Mercury() {
         super(ChemicalFormula.Hg, -70.0f, 0.0f);

@@ -1,4 +1,4 @@
-package hslu.oop.sw10;
+package hslu.oop.sw10.element;
 
 public enum ChemicalFormula {
     Pb("Blei"), N("Stickstoff"), Hg("Quecksilver");

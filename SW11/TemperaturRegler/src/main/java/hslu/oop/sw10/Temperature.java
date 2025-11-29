@@ -1,5 +1,11 @@
 package hslu.oop.sw10;
 
+import hslu.oop.sw10.element.ChemicalElement;
+import hslu.oop.sw10.element.State;
+import hslu.oop.sw10.element.impl.Lead;
+import hslu.oop.sw10.element.impl.Mercury;
+import hslu.oop.sw10.element.impl.Nitrogen;
+
 import java.util.Objects;
 
 public final class Temperature implements Comparable<Temperature> {
