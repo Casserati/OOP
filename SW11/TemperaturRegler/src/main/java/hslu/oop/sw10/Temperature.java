@@ -10,6 +10,8 @@ import java.util.Objects;
 
 public final class Temperature implements Comparable<Temperature> {
 
+    public static final float MAX_KELVIN = 1000f;
+    public static final float MIN_KELVIN = 0f;
     private static final float KELVIN_OFFSET = 273.15f;
     float temperatureInCelsius;
 
@@ -115,7 +117,7 @@ public final class Temperature implements Comparable<Temperature> {
     }
 
     private static boolean verifyTemperatureValid(float value) {
-        if (fromCelsiusToKelvin(value) > 1000f || fromCelsiusToKelvin(value) < 0f) {
+        if (fromCelsiusToKelvin(value) > MAX_KELVIN || fromCelsiusToKelvin(value) < MIN_KELVIN) {
             System.out.println("Temperatur ist nicht gültig für den gegebenen Wertebereich!");
             return false;
         } else {

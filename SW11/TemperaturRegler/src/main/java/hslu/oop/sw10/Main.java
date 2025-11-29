@@ -1,13 +1,18 @@
 package hslu.oop.sw10;
 
 import hslu.oop.sw10.collections.TemperatureVerlaufImpl;
+import hslu.oop.sw10.csv.Analyzer;
 import hslu.oop.sw10.csv.CsvReader;
+import hslu.oop.sw10.csv.Measurement;
 import hslu.oop.sw10.event.TemperatureEventHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -41,7 +46,8 @@ public class Main {
                     LOGGER.error(ex.getMessage());
                 }
             } else {
-                csvReader.readCsvFile(csv);
+                List<Measurement> measurements = csvReader.readCsvFile(csv);
+                Analyzer.query(measurements, LocalDateTime.of(2025, 1, 27, 0, 0), LocalDateTime.of(2025, 1, 28, 0, 0));
                 writeIntoFile(temperatureVerlauf);
                 readFile(temperatureVerlauf);
                 LOGGER.info("Amount Temperatures were: {}", temperatureVerlauf.getCount());

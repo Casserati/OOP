@@ -39,9 +39,10 @@ class TemperatureTest {
 
     @Test
     void initTempOver1000Kelvin() {
-        assertThrows(IllegalArgumentException.class,
-                () -> Temperature.createFromCelsius(1000),
-                "Die eingegebene Temperatur in Celsius entspricht nicht einer gültigen Temperatur.");
+        assertTrue(
+                assertThrows(IllegalArgumentException.class,
+                        () -> Temperature.createFromCelsius(1000))
+                        .getMessage().contains("Die eingegebene Temperatur in Celsius entspricht nicht einer gültigen Temperatur."));
     }
 
     @Test
@@ -55,19 +56,20 @@ class TemperatureTest {
 
     @Test
     void initTempUnder0Kelvin() {
-        assertThrows(IllegalArgumentException.class,
-                () -> Temperature.createFromCelsius(-500),
-                "Die eingegebene Temperatur in Celsius entspricht nicht einer gültigen Temperatur.");
+        assertTrue(
+                assertThrows(IllegalArgumentException.class,
+                        () -> Temperature.createFromCelsius(-500))
+                        .getMessage().contains("Die eingegebene Temperatur in Celsius entspricht nicht einer gültigen Temperatur."));
     }
 
     @Test
-    void test_tempChange_KelvinToCelsius(){
+    void test_tempChange_KelvinToCelsius() {
         float expectedKelvin = 273.15f;
         assertEquals(expectedKelvin, Temperature.fromCelsiusToKelvin(0));
     }
 
     @Test
-    void test_tempChange_CelsiusToKelvin(){
+    void test_tempChange_CelsiusToKelvin() {
         float expectedCelsius = 0.0f;
         assertEquals(expectedCelsius, Temperature.fromKelvinToCelsius(273.15f));
     }

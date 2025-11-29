@@ -17,7 +17,7 @@ class TemperatureVerlaufImplTest {
     }
 
     @Test
-    void test_addmethod() {
+    void test_addMethod() {
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(100.0f));
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(200.0f));
 
@@ -35,13 +35,6 @@ class TemperatureVerlaufImplTest {
 
         Assertions.assertEquals(0, temperatureVerlaufImpl.getCount());
     }
-
-//    @Test
-//    void test_maxValue_emptySet() {
-//        Assertions.assertThrows(NoSuchElementException.class, () -> {
-//            temperatureVerlaufImpl.getMaxValue();
-//        });
-//    }
 
     @Test
     void test_maxValue_emptySet() {

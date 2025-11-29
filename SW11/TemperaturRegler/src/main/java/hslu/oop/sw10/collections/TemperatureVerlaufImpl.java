@@ -75,7 +75,7 @@ public class TemperatureVerlaufImpl implements TemperatureVerlauf {
         }
     }
 
-    public void fireEvent(TemperatureEvent event) {
+    private void fireEvent(TemperatureEvent event) {
         for (final TemperatureEventListener listener : this.temperatureEventListeners) {
             listener.eventChanged(event);
         }

@@ -1,13 +1,26 @@
 package hslu.oop.sw10.csv;
 
+import hslu.oop.sw10.Temperature;
+import hslu.oop.sw10.csv.data.Converter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CsvReader {
 
-    public void readCsvFile(File csv) {
+    private static final Logger LOGGER = LogManager.getLogger(CsvReader.class);
+    private static final List<Measurement> measurements = new ArrayList<>();
+
+    public static List<Measurement> readCsvFile(File csv) {
+
         try (BufferedReader br = new BufferedReader(new FileReader(csv))) {
             String line;
 
@@ -15,14 +28,19 @@ public class CsvReader {
                 // Split the line by comma
                 String[] fields = line.split(";");
 
-                System.out.print("Time Stamp: " + fields[1]);
-                System.out.print("Celsius Value : " + fields[2]);
-                System.out.print("Luftfeuchtigkeit: " + fields[3]);
-                System.out.println();
+                measurements.add(new Measurement(Converter.convertToCelsiusTemperature(fields[2]),
+                        Converter.convertToInt(fields[3]), Converter.convertToLocalDateTime(fields[1])));
             }
+            return measurements;
 
         } catch (IOException ex) {
-            ex.printStackTrace();
+            LOGGER.error("Error occurred trying to read file");
+            LOGGER.error(ex.getMessage());
+            return Collections.emptyList();
+        } catch (DateTimeParseException ex) {
+            LOGGER.error("Error trying to parse date from file");
+            LOGGER.error(ex.getMessage());
+            return Collections.emptyList();
         }
     }
 }
