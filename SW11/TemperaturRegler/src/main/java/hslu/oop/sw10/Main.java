@@ -1,6 +1,7 @@
 package hslu.oop.sw10;
 
 import hslu.oop.sw10.collections.TemperatureVerlaufImpl;
+import hslu.oop.sw10.csv.CsvReader;
 import hslu.oop.sw10.event.TemperatureEventHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,6 +18,8 @@ public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
     private static TemperatureEventHandler handler = new TemperatureEventHandler();
+
+    private static final CsvReader csvReader = new CsvReader();
 
     private static File file = Paths.get("src/main/resources/file.txt").toFile();
     private static File csv = Paths.get("src/main/resources/csv.csv").toFile();
@@ -38,7 +41,7 @@ public class Main {
                     LOGGER.error(ex.getMessage());
                 }
             } else {
-                readCsvFile();
+                csvReader.readCsvFile(csv);
                 writeIntoFile(temperatureVerlauf);
                 readFile(temperatureVerlauf);
                 LOGGER.info("Amount Temperatures were: {}", temperatureVerlauf.getCount());
@@ -80,22 +83,5 @@ public class Main {
         }
     }
 
-    private static void readCsvFile(){
-        try (BufferedReader br = new BufferedReader(new FileReader(csv))) {
-            String line;
 
-            while ((line = br.readLine()) != null) {
-                // Split the line by comma
-                String[] fields = line.split(";");
-
-                System.out.print("Time Stamp: " + fields[1]);
-                System.out.print("Celsius Value : "+ fields[2]);
-                System.out.print("Luftfeuchtigkeit: " + fields[3]);
-                System.out.println();
-            }
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
 }

@@ -1,4 +1,4 @@
-package hslu.oop.sw10.data;
+package hslu.oop.sw10.csv.data;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
