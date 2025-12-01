@@ -28,9 +28,9 @@ public class Analyzer {
 
         Temperature averageTemp = Temperature.createFromCelsius(average / measurements.size());
 
-        LOGGER.info("Max Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), maxTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(maxTemp.getTimeOfMeasurement()), maxTemp.getHumidity());
-        LOGGER.info("Min Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), minTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(minTemp.getTimeOfMeasurement()),  maxTemp.getHumidity());
-        LOGGER.info("Average Temp between {} and {} was {}", start, end, averageTemp.getTemperatureInCelsius());
+        LOGGER.info("66cef3 Max Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), maxTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(maxTemp.getTimeOfMeasurement()), maxTemp.getHumidity());
+        LOGGER.info("1b12ea Min Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), minTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(minTemp.getTimeOfMeasurement()),  maxTemp.getHumidity());
+        LOGGER.info("83c2c5 Average Temp between {} and {} was {}", start, end, averageTemp.getTemperatureInCelsius());
     }
 
     private static Measurement getMaxMeasurement(Measurement firstMeasurement, Measurement secondMeasurement) {
