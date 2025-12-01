@@ -48,7 +48,7 @@ class TemperatureVerlaufImplTest {
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(200.0f));
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(300.0f));
         assertNotNull(temperatureVerlaufImpl.getMaxValue());
-        assertEquals(300.0f, temperatureVerlaufImpl.getMaxValue());
+        assertEquals(300.0f, temperatureVerlaufImpl.getMaxValue().getTemperatureInCelsius());
     }
 
     @Test
@@ -62,7 +62,7 @@ class TemperatureVerlaufImplTest {
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(0.0f));
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(10.0f));
         assertNotNull(temperatureVerlaufImpl.getMinValue());
-        assertEquals(-10.0f, temperatureVerlaufImpl.getMinValue());
+        assertEquals(-10.0f, temperatureVerlaufImpl.getMinValue().getTemperatureInCelsius());
     }
 
     @Test
@@ -78,7 +78,7 @@ class TemperatureVerlaufImplTest {
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(200.0f));
         temperatureVerlaufImpl.add(Temperature.createFromCelsius(300.0f));
         assertNotNull(temperatureVerlaufImpl.getAverage());
-        assertEquals(100.0f, temperatureVerlaufImpl.getAverage());
+        assertEquals(100.0f, temperatureVerlaufImpl.getAverage().getTemperatureInCelsius());
     }
 
 }
