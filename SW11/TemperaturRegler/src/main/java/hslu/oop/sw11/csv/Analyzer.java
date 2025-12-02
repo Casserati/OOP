@@ -16,21 +16,26 @@ public class Analyzer {
 
         Measurement maxTemp = new Measurement(Temperature.createFromKelvin(Temperature.MIN_KELVIN), Integer.MIN_VALUE, LocalDateTime.MIN);
         Measurement minTemp = new Measurement(Temperature.createFromKelvin(Temperature.MAX_KELVIN), Integer.MAX_VALUE, LocalDateTime.MAX);
+        Temperature averageTemp = Temperature.createFromCelsius(0.0f);
         float average = 0.0f;
+        int count = 0;
 
         for (Measurement measurement : measurements) {
             if (!measurement.getTimeOfMeasurement().isBefore(start) && !measurement.getTimeOfMeasurement().isAfter(end)) {
+
                 maxTemp = getMaxMeasurement(maxTemp, measurement);
                 minTemp = getMinMeasurement(minTemp, measurement);
                 average += measurement.getTemperature().getTemperatureInCelsius();
+                count++;
             }
         }
-
-        Temperature averageTemp = Temperature.createFromCelsius(average / measurements.size());
-
+        if (count != 0) {
+            averageTemp = Temperature.createFromCelsius(average / count);
+        }
         LOGGER.info("66cef3 Max Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), maxTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(maxTemp.getTimeOfMeasurement()), maxTemp.getHumidity());
-        LOGGER.info("1b12ea Min Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), minTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(minTemp.getTimeOfMeasurement()),  maxTemp.getHumidity());
-        LOGGER.info("83c2c5 Average Temp between {} and {} was {}", start, end, averageTemp.getTemperatureInCelsius());
+        LOGGER.info("1b12ea Min Temp between {} and {} was {}, recorded on {} with humidity value of {}", Converter.convertFromLocaleDateTime(start), Converter.convertFromLocaleDateTime(end), minTemp.getTemperature().getTemperatureInCelsius(), Converter.convertFromLocaleDateTime(minTemp.getTimeOfMeasurement()), maxTemp.getHumidity());
+        LOGGER.info("83c2c5 Average Temp between {} and {} was {}", start, end,
+                String.format("%.2f", averageTemp.getTemperatureInCelsius()));
     }
 
     private static Measurement getMaxMeasurement(Measurement firstMeasurement, Measurement secondMeasurement) {
@@ -40,6 +45,6 @@ public class Analyzer {
 
     private static Measurement getMinMeasurement(Measurement firstMeasurement, Measurement secondMeasurement) {
         return firstMeasurement.getTemperature().getTemperatureInCelsius() > secondMeasurement.getTemperature().getTemperatureInCelsius() ?
-                secondMeasurement: firstMeasurement;
+                secondMeasurement : firstMeasurement;
     }
 }
