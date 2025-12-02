@@ -24,10 +24,10 @@ public class Main {
         readFile(path.toFile());
     }
 
-    private static void writeIntoFile(File file){
+    private static void writeIntoFile(File file) {
         try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(file))) {
 
-            for (int i = 0; i <= 100; i++){
+            for (int i = 0; i <= 100; i++) {
                 dos.writeInt(i);
             }
             LOGGER.info("Integer written successfully.");
@@ -36,7 +36,7 @@ public class Main {
         }
     }
 
-    private static void readFile(File file){
+    private static void readFile(File file) {
         if (file.exists()) {
             try (DataInputStream dis = new DataInputStream(new FileInputStream(file))) {
 
@@ -47,11 +47,11 @@ public class Main {
                 byte byteValue = dis.readByte();       // read byte
                 float floatValue = dis.readFloat();       // read byte
 
-                LOGGER.info("number = " + number);
-                LOGGER.info("value  = " + value);
-                LOGGER.info("flag   = " + flag);
-                LOGGER.info("byte   = " + byteValue);
-                LOGGER.info("float   = " + floatValue);
+                LOGGER.info("number = {}", number);
+                LOGGER.info("value  = {}", value);
+                LOGGER.info("flag   = {}", flag);
+                LOGGER.info("byte   = {}", byteValue);
+                LOGGER.info("float   = {}", floatValue);
 
             } catch (IOException ex) {
                 ex.printStackTrace();
