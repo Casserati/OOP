@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hslu.oop.sw12.javafxintro.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Label fx:id="idNumber" text="Label" />
+   <TextField fx:id="idText" />
+   <Label fx:id="firstname" text="Label" />
+   <TextField fx:id="firstnameText"/>
+
+    <Label fx:id="lastname" />
+   <TextField fx:id="lastnameText" />
+   <Label fx:id="birthDate" layoutX="103.0" layoutY="113.0" text="Label" />
+   <DatePicker fx:id="birthDateText"/>
+   <Button fx:id="create" mnemonicParsing="false" onAction="#onCreateButtonClick" text="Create" />
+</VBox>
