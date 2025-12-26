@@ -25,4 +25,13 @@ class Room {
     public int getRoomCapacity() {
         return roomCapacity;
     }
+
+    @Override
+    public boolean equals(final Object object) {
+        if (object == this) {
+            return true;
+        }
+        return (object instanceof Room room)
+                && (room.roomNumber == this.roomNumber);
+    }
 }

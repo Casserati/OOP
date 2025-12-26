@@ -23,13 +23,19 @@ class RoomTest {
     @ParameterizedTest
     @MethodSource("provideInvalidRoomNumber")
     void test_invalidRoomNumber(int roomNumber, int roomCapacity) {
-        assertThrows(IllegalArgumentException.class, () -> new Room(roomNumber, roomCapacity),"Invalid room number, room number must be between 100 and 999");
+        assertEquals(
+                "Invalid room number, room number must be between 100 and 999",
+                assertThrows(IllegalArgumentException.class,
+                        () -> new Room(roomNumber, roomCapacity)).getMessage());
     }
 
     @ParameterizedTest
     @MethodSource("provideInvalidRoomCapacity")
     void test_invalidRoomCapacity(int roomNumber, int roomCapacity) {
-        assertThrows(IllegalArgumentException.class, () -> new Room(roomNumber, roomCapacity),"Invalid room capacity, room capacity must be larger than 2");
+        assertEquals(
+                "Invalid room capacity, room capacity must be larger than 2",
+                assertThrows(IllegalArgumentException.class,
+                        () -> new Room(roomNumber, roomCapacity)).getMessage());
     }
 
     private static Stream<Arguments> provideValidParameters() {
@@ -49,7 +55,6 @@ class RoomTest {
                 Arguments.of(40, 5),
                 Arguments.of(50, 6));
     }
-
 
 
     private static Stream<Arguments> provideInvalidRoomCapacity() {
