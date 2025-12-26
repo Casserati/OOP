@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1f68093-c8b4-413e-853d-756bbb863baa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/SW13/RoomManagement/src/main/java/hslu/oop/sw13/room/exception/NoRoomsFullException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW13/RoomManagement/src/main/java/resources/log4j2.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +72,7 @@
       <workItem from="1764677584227" duration="313000" />
       <workItem from="1764677926838" duration="597000" />
       <workItem from="1766765673929" duration="17000" />
-      <workItem from="1766767692946" duration="766000" />
+      <workItem from="1766767692946" duration="2053000" />
     </task>
     <servers />
   </component>
