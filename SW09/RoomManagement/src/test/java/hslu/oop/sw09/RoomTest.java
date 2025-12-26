@@ -1,13 +1,13 @@
 package hslu.oop.sw09;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class RoomTest {
 
@@ -36,6 +36,24 @@ class RoomTest {
                 "Invalid room capacity, room capacity must be larger than 2",
                 assertThrows(IllegalArgumentException.class,
                         () -> new Room(roomNumber, roomCapacity)).getMessage());
+    }
+
+    @Test
+    void test_equals_sameRoomNumber(){
+        Room room = new Room(150, 5);
+
+        Room room2 = new Room(150, 6);
+
+        assertTrue(room.equals(room2));
+    }
+
+    @Test
+    void test_equals_notSameRoomNumber(){
+        Room room = new Room(151, 5);
+
+        Room room2 = new Room(150, 6);
+
+        assertFalse(room.equals(room2));
     }
 
     private static Stream<Arguments> provideValidParameters() {
