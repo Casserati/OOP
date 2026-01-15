@@ -2,7 +2,6 @@ package hslu.oop.sw13;
 
 import hslu.oop.sw13.event.RoomEventEventHandler;
 import hslu.oop.sw13.room.Room;
-import hslu.oop.sw13.room.RoomManagement;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
