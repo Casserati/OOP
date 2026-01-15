@@ -1,0 +1,16 @@
+@startuml
+class org.example.JavaClass {
++ {static} String TEST
+- {static} int number
+- List<SecondClass> secondClassList
+- double decimal
+# float floatNumber
++ byte aByte
++ void testingMethod(SecondClass)
+}
+
+
+
+
+org.example.InterfaceClass <|.. org.example.JavaClass
+@enduml
